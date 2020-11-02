@@ -4,7 +4,7 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
           <div class="alert alert-success" role="alert">
-            <i class="fas fa-tachnometer-alt"></i>Dashboard
+            <i class="fas fa-fw fa-tachometer-alt"></i> Dashboard
           </div>
           <div class="alert alert-success" role="alert">
             <h4 class="alert-heading">Selamat Datang!</h4>
@@ -43,11 +43,46 @@
                       <a href="<?php echo base_url() ?>"><p class="nav-link small text-info">KHS</p></a>
                       <i class="fas fa-3x fa-file-alt"></i>
                     </div>
+                  </div><hr>
+                  <div class="row">
+                    <div class="col-md-3 text-info text-center">
+                      <a href="<?php echo base_url() ?>"><p class="nav-link small text-info">INPUT NILAI</p></a>
+                      <i class="fas fa-3x fa-sort-numeric-down"></i>
+                    </div>
+                    <div class="col-md-3 text-info text-center">
+                      <a href="<?php echo base_url() ?>"><p class="nav-link small text-info">CETAK TRANSKRIP</p></a>
+                      <i class="fas fa-3x fa-print"></i>
+                    </div>
+                    <div class="col-md-3 text-info text-center">
+                      <a href="<?php echo base_url() ?>"><p class="nav-link small text-info">KATEGORI</p></a>
+                      <i class="fas fa-3x fa-list-ul"></i>
+                    </div>
+                    <div class="col-md-3 text-info text-center">
+                      <a href="<?php echo base_url() ?>"><p class="nav-link small text-info">INFO KAMPUS</p></a>
+                      <i class="fas fa-3x fa-bullhorn"></i>
+                    </div>
+                  </div><hr>
+                  <div class="row">
+                    <div class="col-md-3 text-info text-center">
+                      <a href="<?php echo base_url() ?>"><p class="nav-link small text-info">IDENTITAS</p></a>
+                      <i class="fas fa-3x fa-id-card-alt"></i>
+                    </div>
+                    <div class="col-md-3 text-info text-center">
+                      <a href="<?php echo base_url() ?>"><p class="nav-link small text-info">TENTANG KAMPUS</p></a>
+                      <i class="fas fa-3x fa-info-circle"></i>
+                    </div>
+                    <div class="col-md-3 text-info text-center">
+                      <a href="<?php echo base_url() ?>"><p class="nav-link small text-info">FASILITAS</p></a>
+                      <i class="fas fa-3x fa-laptop"></i>
+                    </div>
+                    <div class="col-md-3 text-info text-center">
+                      <a href="<?php echo base_url() ?>"><p class="nav-link small text-info">GALLERY</p></a>
+                      <i class="fas fa-3x fa-image"></i>
+                    </div>
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
               </div>
             </div>

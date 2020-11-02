@@ -19,8 +19,8 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+        <a class="nav-link" href="<?php echo base_url('administrator/dashboard') ?>">
+          <i class="fas fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
 
@@ -41,7 +41,7 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Sub-Menu Akademik:</h6>
-            <a class="collapse-item" href="buttons.html">Jurusan</a>
+            <a class="collapse-item" href="<?php echo base_url('administrator/jurusan') ?>">Jurusan</a>
             <a class="collapse-item" href="cards.html">Program Study</a>
             <a class="collapse-item" href="buttons.html">Mata Kuliah</a>
             <a class="collapse-item" href="cards.html">Mahasiswa</a>
