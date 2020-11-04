@@ -25,7 +25,7 @@ class Dashboard extends CI_Controller
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>');
-			redirect('administrator/auth');
+			redirect(base_url('administrator/auth'));
 		}
 	}
 
