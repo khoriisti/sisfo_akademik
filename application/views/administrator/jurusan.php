@@ -1,7 +1,7 @@
 <div class="container-fluid">
 	
 	<div class="alert alert-success" role="alert">
-    	<i class="fas fa-university"></i> Form Input Jurusan
+    	<i class="fas fa-university"></i> Jurusan
     </div>
     <?php echo $this->session->flashdata('pesan'); ?>
 
