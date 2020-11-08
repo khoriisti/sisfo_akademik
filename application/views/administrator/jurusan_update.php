@@ -1,7 +1,7 @@
 <div class="container-fluid">
 	
 	<div class="alert alert-success" role="alert">
-    	<i class="fas fa-university"></i> Form Update Jurusan
+    	<i class="fas fa-edit"></i> Form Update Jurusan
     </div>
 
     <?php foreach ($jurusan as $jrs) : ?>
