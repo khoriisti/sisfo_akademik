@@ -4,14 +4,15 @@
     	<i class="fas fa-university"></i> Form Input Mahasiswa
     </div>
 
-	<form method="post" action="<?php echo base_url('administrator/mahasiswa/tambah_mahasiswa_aksi') ?>">
-		<div class="form-group">
-			<label>NIM</label>
+    <?php echo form_open_multipart('administrator/mahasiswa/tambah_mahasiswa_aksi') ?>
+
+    	<div class="form-group">
+			<label>NIM Mahasiswa</label>
 			<input type="text" name="nim" placeholder="Masukkan NIM Mahasiswa" class="form-control">
 			<?php echo form_error('nim','<div class="text-danger small ml-3">') ?>
 		</div>
 		<div class="form-group">
-			<label>Nama Lengkap</label>
+			<label>Nama Mahasiswa</label>
 			<input type="text" name="nama_lengkap" placeholder="Masukkan Nama Lengkap" class="form-control">
 			<?php echo form_error('nama_lengkap','<div class="text-danger small ml-3">') ?>
 		</div>
@@ -37,12 +38,13 @@
 		</div>
 		<div class="form-group">
 			<label>Tanggal Lahir</label>
-			<input type="text" name="tanggal_lahir" placeholder="Masukkan Tanggal Lahir" class="form-control">
+			<input type="date" name="tanggal_lahir" placeholder="Masukkan Tanggal Lahir" class="form-control">
 			<?php echo form_error('tanggal_lahir','<div class="text-danger small ml-3">') ?>
 		</div>
 		<div class="form-group">
 			<label>Jenis Kelamin</label>
 			<select name="jenis_kelamin" class="form-control">
+				<option value="">-- Pilih Jenis Kelamin --</option>
 				<option>Laki-Laki</option>
 				<option>Perempuan</option>
 			</select>
@@ -58,7 +60,12 @@
 			</select>
 			<?php echo form_error('nama_prodi','<div class="text-danger small ml-3">') ?>
 		</div>
-		<button type="submit" class="btn btn-primary">Simpan</button>
-	</form>
+		<div class="form-group">
+			<label>Foto Mahasiswa</label><br>
+			<input type="file" name="photo">
+		</div>
+		<button type="submit" class="btn btn-primary mb-5 mt-3">Simpan</button>
+
+    <?php form_close(); ?>
 
 </div>

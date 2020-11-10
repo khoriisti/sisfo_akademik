@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2020 at 01:15 AM
+-- Generation Time: Nov 11, 2020 at 12:50 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 5.6.40
 
@@ -68,7 +68,8 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`id`, `nim`, `nama_lengkap`, `alamat`, `email`, `telepon`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `nama_prodi`, `photo`) VALUES
-(1, '12171353', 'Darmawan Laoli', 'Jakarta', 'darmawan@gmail.com', '02129553186', 'Jakarta', '2020-11-09', 'Laki-Laki', 'Sistem Informasi', 'profile.jpg');
+(1, '12171353', 'Darmawan', 'Jakarta', 'darmawan@gmail.com', '02129553186', 'Jakarta', '2020-11-09', 'Laki-Laki', 'Sistem Informasi', 'Dani.jpg'),
+(2, '12171355', 'Budi', 'Jakarta', 'budi@gmail.com', '0212986735', 'Bandung', '2020-11-10', 'Laki-Laki', 'Akutansi', 'IMG_20180702_202202.jpg');
 
 -- --------------------------------------------------------
 
@@ -184,7 +185,7 @@ ALTER TABLE `jurusan`
 -- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `prodi`
