@@ -38,6 +38,19 @@
 			$this->db->delete($table);
 		}
 
+		public function hapus_datagambar($where, $table)
+		{
+			$this->db->where($where);
+			$query = $this->db->get($table);
+		    $row = $query->row();
+
+		    $path = 'assets/uploads/'.$row->photo;
+
+		    unlink($path);
+
+			$this->db->delete($table, $where);
+		}
+
 
 
 	}

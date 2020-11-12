@@ -47,7 +47,7 @@
 			<div class="form-group">
 				<label>Jenis Kelamin</label>
 				<select name="jenis_kelamin" class="form-control">
-					<option value="<?php echo $mhs->jenis_kelamin ?>"><?php echo $mhs->tempat_lahir ?></option>
+					<option value="<?php echo $mhs->jenis_kelamin ?>"><?php echo $mhs->jenis_kelamin ?></option>
 					<option>Laki-Laki</option>
 					<option>Perempuan</option>
 				</select>

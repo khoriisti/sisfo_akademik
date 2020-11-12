@@ -181,6 +181,69 @@
 				
 		}
 
+		public function delete($id)
+		{
+			/*
+			$where = array('id' => $id);
+
+			$this->mahasiswa_model->hapus_data($where, 'mahasiswa');
+			$this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					  Data Mahasiswa Berhasil di HAPUS!
+					  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					    <span aria-hidden="true">&times;</span>
+					  </button>
+					</div>');
+
+			redirect(base_url('administrator/mahasiswa'));
+			*/
+
+			$where = array('id' => $id);
+
+			$this->mahasiswa_model->hapus_datagambar($where, 'mahasiswa');
+			$this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					  Data Mahasiswa Berhasil di HAPUS!
+					  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					    <span aria-hidden="true">&times;</span>
+					  </button>
+					</div>');
+
+			redirect(base_url('administrator/mahasiswa'));
+
+			/* Berhasil Hapus Gambar dan Data
+
+			$this->db->where('id',$id);
+		    $query = $this->db->get('mahasiswa');
+		    $row = $query->row();
+
+		    $path = 'assets/uploads/';
+
+		    unlink($path.$row->photo);
+
+		    $this->db->delete('mahasiswa', array('id' => $id));
+
+		    $this->session->set_flashdata('pesan', $path.$row->photo);
+
+			redirect(base_url('administrator/mahasiswa'));
+
+			*/
+
+
+			/* Berhasil Hapus Gambar
+			$this->db->where('id',$id);
+		    $query = $this->db->get('mahasiswa');
+		    $row = $query->row();
+
+			$path = 'assets/uploads/';
+			
+			unlink($path.$row->photo);// hapus data di folder dimana data tersimpan
+
+			$this->session->set_flashdata('pesan', $path.$row->photo);
+
+			redirect(base_url('administrator/mahasiswa'));
+			*/
+
+		}
+
 	}
 
 ?>
