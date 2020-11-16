@@ -1,7 +1,7 @@
 <div class="container-fluid">
 	
 	<div class="alert alert-success" role="alert">
-    	<i class="fas fa-edit"></i> Form Edit Program Studi
+    	<i class="fa fa-edit"></i> Form Edit Program Studi
     </div>
 
     <?php foreach ($prodi as $prd) : ?>

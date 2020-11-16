@@ -42,7 +42,7 @@ class Jurusan extends CI_Controller
 				'nama_jurusan' => $this->input->post('nama_jurusan', TRUE),
 			);
 			$this->jurusan_model->input_data($data);
-			$this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+			$this->session->set_flashdata('pesan','<div class="alert alert-success alert-dismissible fade show" role="alert">
 				  Data Jurusan Berhasil Ditambahkan!
 				  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 				    <span aria-hidden="true">&times;</span>

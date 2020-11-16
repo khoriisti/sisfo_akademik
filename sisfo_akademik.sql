@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2020 at 12:50 AM
+-- Generation Time: Nov 16, 2020 at 01:43 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 5.6.40
 
@@ -46,6 +46,20 @@ INSERT INTO `jurusan` (`id_jurusan`, `kode_jurusan`, `nama_jurusan`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `krs`
+--
+
+CREATE TABLE `krs` (
+  `id_krs` int(11) NOT NULL,
+  `id_thn_akad` int(10) NOT NULL,
+  `nim` varchar(10) NOT NULL,
+  `kode_matakuliah` varchar(10) NOT NULL,
+  `nilai` varchar(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `mahasiswa`
 --
 
@@ -68,8 +82,9 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`id`, `nim`, `nama_lengkap`, `alamat`, `email`, `telepon`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `nama_prodi`, `photo`) VALUES
-(1, '12171353', 'Darmawan', 'Jakarta', 'darmawan@gmail.com', '02129553186', 'Jakarta', '2020-11-09', 'Laki-Laki', 'Sistem Informasi', 'Dani.jpg'),
-(2, '12171355', 'Budi', 'Jakarta', 'budi@gmail.com', '0212986735', 'Bandung', '2020-11-10', 'Laki-Laki', 'Akutansi', 'IMG_20180702_202202.jpg');
+(1, '12171353', 'Darmawan', 'Jakarta', 'darmawan@gmail.com', '02129553186', 'Jakarta', '2020-11-09', 'Laki-Laki', 'Sistem Informasi', 'Profile.jpg'),
+(2, '12171355', 'Budi', 'Jakarta', 'budi@gmail.com', '0212986735', 'Bandung', '2020-11-10', 'Laki-Laki', 'Akutansi', 'IMG_20180702_202202.jpg'),
+(12, '12171353', 'Dika', 'Bandung', 'dika@gmail.com', '02129553186', 'Jakarta', '2020-11-12', 'Laki-Laki', 'Sastra Inggris', 'CC_BCA.jpg');
 
 -- --------------------------------------------------------
 
@@ -122,6 +137,29 @@ INSERT INTO `prodi` (`id_prodi`, `kode_prodi`, `nama_prodi`, `nama_jurusan`) VAL
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tahun_akademik`
+--
+
+CREATE TABLE `tahun_akademik` (
+  `id_thn_akad` int(11) NOT NULL,
+  `tahun_akademik` varchar(20) NOT NULL,
+  `semester` varchar(20) NOT NULL,
+  `status` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tahun_akademik`
+--
+
+INSERT INTO `tahun_akademik` (`id_thn_akad`, `tahun_akademik`, `semester`, `status`) VALUES
+(1, '2018/2019', 'Ganjil', 'Aktif'),
+(2, '2018/2019', 'Genap', 'Aktif'),
+(3, '2019/2020', 'Ganjil', 'Aktif'),
+(4, '2019/2020', 'Genap', 'Aktif');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -154,6 +192,12 @@ ALTER TABLE `jurusan`
   ADD PRIMARY KEY (`id_jurusan`);
 
 --
+-- Indexes for table `krs`
+--
+ALTER TABLE `krs`
+  ADD PRIMARY KEY (`id_krs`);
+
+--
 -- Indexes for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
@@ -164,6 +208,12 @@ ALTER TABLE `mahasiswa`
 --
 ALTER TABLE `prodi`
   ADD PRIMARY KEY (`id_prodi`);
+
+--
+-- Indexes for table `tahun_akademik`
+--
+ALTER TABLE `tahun_akademik`
+  ADD PRIMARY KEY (`id_thn_akad`);
 
 --
 -- Indexes for table `user`
@@ -182,16 +232,28 @@ ALTER TABLE `jurusan`
   MODIFY `id_jurusan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `krs`
+--
+ALTER TABLE `krs`
+  MODIFY `id_krs` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `prodi`
 --
 ALTER TABLE `prodi`
   MODIFY `id_prodi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tahun_akademik`
+--
+ALTER TABLE `tahun_akademik`
+  MODIFY `id_thn_akad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user`
