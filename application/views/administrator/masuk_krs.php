@@ -30,6 +30,7 @@
 				}
 
 				echo form_dropdown('id_thn_akad',$dropDownList,'', 'class="form-control" id="id_thn_akad"');
+				echo form_error('id_thn_akad','<div class="text-danger small ml-3">')
 
 			?>
 

@@ -33,6 +33,16 @@
 			$this->db->delete($table);
 		}
 
+		public $table = 'tahun_akademik';
+		public $id = 'id_thn_akad';
+
+		public function get_by_id($id)
+		{
+			$this->db->where($this->id,$id);
+			return $this->db->get($this->table)->row();
+		}
+
+
 	}
 
 ?>

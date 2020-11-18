@@ -1,7 +1,7 @@
 <div class="container-fluid">
 	
 	<div class="alert alert-success" role="alert">
-    	<i class="fas fa-university"></i> Form Input Program Studi
+    	<i class="fa fa-plus"></i> Form Input Program Studi
     </div>
 
 	<form method="post" action="<?php echo base_url('administrator/prodi/tambah_prodi_aksi') ?>">

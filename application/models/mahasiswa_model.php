@@ -51,6 +51,15 @@
 			$this->db->delete($table, $where);
 		}
 
+		public $table = 'mahasiswa';
+		public $id = 'nim';
+
+		public function get_by_id($id)
+		{
+			$this->db->where($this->id,$id);
+			return $this->db->get($this->table)->row();
+		}
+
 
 
 	}

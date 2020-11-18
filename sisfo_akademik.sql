@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 16, 2020 at 01:43 AM
+-- Generation Time: Nov 18, 2020 at 01:22 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 5.6.40
 
@@ -84,7 +84,7 @@ CREATE TABLE `mahasiswa` (
 INSERT INTO `mahasiswa` (`id`, `nim`, `nama_lengkap`, `alamat`, `email`, `telepon`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `nama_prodi`, `photo`) VALUES
 (1, '12171353', 'Darmawan', 'Jakarta', 'darmawan@gmail.com', '02129553186', 'Jakarta', '2020-11-09', 'Laki-Laki', 'Sistem Informasi', 'Profile.jpg'),
 (2, '12171355', 'Budi', 'Jakarta', 'budi@gmail.com', '0212986735', 'Bandung', '2020-11-10', 'Laki-Laki', 'Akutansi', 'IMG_20180702_202202.jpg'),
-(12, '12171353', 'Dika', 'Bandung', 'dika@gmail.com', '02129553186', 'Jakarta', '2020-11-12', 'Laki-Laki', 'Sastra Inggris', 'CC_BCA.jpg');
+(12, '12171354', 'Dika', 'Bandung', 'dika@gmail.com', '02129553186', 'Jakarta', '2020-11-12', 'Laki-Laki', 'Sastra Inggris', 'CC_BCA.jpg');
 
 -- --------------------------------------------------------
 
@@ -152,10 +152,10 @@ CREATE TABLE `tahun_akademik` (
 --
 
 INSERT INTO `tahun_akademik` (`id_thn_akad`, `tahun_akademik`, `semester`, `status`) VALUES
-(1, '2018/2019', 'Ganjil', 'Aktif'),
-(2, '2018/2019', 'Genap', 'Aktif'),
-(3, '2019/2020', 'Ganjil', 'Aktif'),
-(4, '2019/2020', 'Genap', 'Aktif');
+(1, '2018/2019', '1', 'Aktif'),
+(2, '2018/2019', '2', 'Aktif'),
+(3, '2019/2020', '1', 'Aktif'),
+(4, '2019/2020', '2', 'Aktif');
 
 -- --------------------------------------------------------
 
@@ -253,7 +253,7 @@ ALTER TABLE `prodi`
 -- AUTO_INCREMENT for table `tahun_akademik`
 --
 ALTER TABLE `tahun_akademik`
-  MODIFY `id_thn_akad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_thn_akad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user`
