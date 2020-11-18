@@ -35,11 +35,12 @@
     		<th>KODE MATA KULIAH</th>
     		<th>NAMA MATA KULIAH</th>
             <th>SKS</th>
-    		<th colspan="2">AKSI</th>
+    		<th colspan="2"><center>AKSI</center></th>
     	</tr>
 
     	<?php
     	$no = 1;
+        $jumlahSks = 0;
     	foreach ($krs_data as $krs): ?>
     	<tr>
     		<td width="20px"><?php echo $no++ ?></td>
@@ -49,11 +50,11 @@
     		<td width="20px"><?php echo anchor('../administrator/krs/update/'.$krs->id_krs,'<div class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></div>') ?></td>
     		<td width="20px"><?php echo anchor('../administrator/krs/delete/'.$krs->id_krs,'<div class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></div>') ?></td>
     	</tr>
-    	<tr>
-    		<td colspan="3" align="right"><strong>Jumlah SKS</strong></td>
-    		<td colspan="3" align="right"><strong><?php echo $jumlahSks; ?></strong></td>
-    	</tr>
     	<?php endforeach; ?>
+        <tr>
+            <td colspan="3" align="right"><strong>Jumlah SKS</strong></td>
+            <td colspan="3"><strong><?php echo $jumlahSks; ?></strong></td>
+        </tr>
 
     </table>
 

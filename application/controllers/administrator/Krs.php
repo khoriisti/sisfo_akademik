@@ -72,6 +72,7 @@
 			$this->db->where('k.nim',$nim);
 			$this->db->where('k.id_thn_akad',$thn_akad);
 			$this->db->join('matakuliah as m', 'm.kode_matakuliah = k.kode_matakuliah');
+			$this->db->order_by('k.id_krs', 'ASC');
 
 			$krs = $this->db->get()->result();
 			return $krs;
@@ -112,7 +113,95 @@
 				$nim 				= $this->input->post('nim', TRUE);
 				$id_thn_akad		= $this->input->post('id_thn_akad', TRUE);
 				$kode_matakuliah	= $this->input->post('kode_matakuliah', TRUE);
+
+				$data = array(
+					'id_thn_akad' 		=> $id_thn_akad,
+					'nim'				=> $nim,
+					'kode_matakuliah' 	=> $kode_matakuliah,
+				);
+
+				$this->krs_model->insert($data);
+				$this->session->set_flashdata('pesan','<div class="alert alert-success alert-dismissible fade show" role="alert">
+					  Data KRS Berhasil Ditambahkan!
+					  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					    <span aria-hidden="true">&times;</span>
+					  </button>
+					</div>');
+				redirect(base_url('administrator/krs/index'));
 			}
+		}
+
+		public function _rules()
+		{
+			$this->form_validation->set_rules('id_thn_akad', 'id_thn_akad', 'required',['required' => 'Tahun Akad wajib diisi!']);
+			$this->form_validation->set_rules('nim', 'nim', 'required',['required' => 'NIM Mahasiswa wajib diisi!']);
+		}
+
+		public function update($id)
+		{
+			$row	= $this->krs_model->get_by_id($id);
+			$th 	= $row->id_thn_akad;
+
+			if ($row) {
+				$data = array(
+					'id_krs' 			=> set_value('id_krs',$row->id_krs),
+					'id_thn_akad' 		=> set_value('id_thn_akad',$row->id_thn_akad), 
+					'nim' 				=> set_value('nim',$row->nim),
+					'kode_matakuliah' 	=> set_value('kode_matakuliah',$row->kode_matakuliah),
+					'thn_akad_smt' 		=> $this->tahunakademik_model->get_by_id($th)->tahun_akademik,
+					'semester' 			=> $this->tahunakademik_model->get_by_id($th)->semester==1?'Ganjil':'Genap',
+
+				);
+
+				$this->load->view('templates_administrator/header');
+				$this->load->view('templates_administrator/sidebar');
+				$this->load->view('administrator/krs_update', $data);
+				$this->load->view('templates_administrator/footer');
+			}else{
+				echo "Data Tidak Ada!";
+			}
+		}
+
+		public function update_aksi()
+		{
+			$id_krs 			= $this->input->post('id_krs', TRUE);
+			$nim 				= $this->input->post('nim', TRUE);
+			$id_thn_akad 		= $this->input->post('id_thn_akad', TRUE);
+			$kode_matakuliah 	= $this->input->post('kode_matakuliah', TRUE);
+
+			$data = array(
+				'id_krs' 			=> $id_krs,
+				'id_thn_akad' 		=> $id_thn_akad, 
+				'nim' 				=> $nim,
+				'kode_matakuliah' 	=> $this->input->post('kode_matakuliah', TRUE)
+			);
+
+			$this->krs_model->update($id_krs, $data);
+			$this->session->set_flashdata('pesan','<div class="alert alert-success alert-dismissible fade show" role="alert">
+					  Data KRS Berhasil Update!
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					    <span aria-hidden="true">&times;</span>
+					</button>
+				</div>');
+			redirect(base_url('administrator/krs/index'));
+
+		}
+
+		public function delete($id)
+		{
+			$where = array('id_krs' => $id);
+
+			$this->krs_model->hapus_data($where, 'krs');
+			$this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					  Data KRS Berhasil di HAPUS!
+					  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					    <span aria-hidden="true">&times;</span>
+					  </button>
+					</div>');
+
+			redirect(base_url('administrator/krs/index'));
+
+
 		}
 
 	}
