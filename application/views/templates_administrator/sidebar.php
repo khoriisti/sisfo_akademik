@@ -47,8 +47,8 @@
             <a class="collapse-item" href="<?php echo base_url('administrator/mahasiswa') ?>">Mahasiswa</a>
             <a class="collapse-item" href="<?php echo base_url('administrator/tahun_akademik') ?>">Tahun Akademik</a>
             <a class="collapse-item" href="<?php echo base_url('administrator/krs') ?>">KRS</a>
-            <a class="collapse-item" href="buttons.html">Input Nilai</a>
-            <a class="collapse-item" href="cards.html">KHS</a>
+            <a class="collapse-item" href="<?php echo base_url('administrator/nilai/input_nilai') ?>">Input Nilai</a>
+            <a class="collapse-item" href="<?php echo base_url('administrator/nilai') ?>">KHS</a>
             <a class="collapse-item" href="buttons.html">Cetak Transkrip</a>
             <a class="collapse-item" href="cards.html">Dosen</a>
           </div>
