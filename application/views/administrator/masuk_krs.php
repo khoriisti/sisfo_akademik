@@ -33,8 +33,10 @@
 				echo form_error('id_thn_akad','<div class="text-danger small ml-3">')
 
 			?>
+		</div>
 
 		<button type="submit" class="btn btn-primary mt-3">Proses</button>
+		
 	</form>
 
 </div>

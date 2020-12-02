@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 18, 2020 at 01:22 AM
+-- Generation Time: Dec 02, 2020 at 01:06 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 5.6.40
 
@@ -56,6 +56,19 @@ CREATE TABLE `krs` (
   `kode_matakuliah` varchar(10) NOT NULL,
   `nilai` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `krs`
+--
+
+INSERT INTO `krs` (`id_krs`, `id_thn_akad`, `nim`, `kode_matakuliah`, `nilai`) VALUES
+(1, 1, '12171353', 'MKK02', 'A'),
+(2, 1, '12171353', 'MKK01', 'B'),
+(3, 1, '12171353', 'MKU02', 'C'),
+(4, 1, '12171353', 'MKU01', 'B'),
+(5, 1, '12171355', 'MKU01', 'D'),
+(6, 2, '12171353', 'MKK01', 'A'),
+(7, 2, '12171355', 'MKK01', 'B');
 
 -- --------------------------------------------------------
 
@@ -160,6 +173,29 @@ INSERT INTO `tahun_akademik` (`id_thn_akad`, `tahun_akademik`, `semester`, `stat
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `transkrip_nilai`
+--
+
+CREATE TABLE `transkrip_nilai` (
+  `id_transkrip` int(11) NOT NULL,
+  `nim` varchar(15) NOT NULL,
+  `kode_matakuliah` varchar(15) NOT NULL,
+  `nilai` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `transkrip_nilai`
+--
+
+INSERT INTO `transkrip_nilai` (`id_transkrip`, `nim`, `kode_matakuliah`, `nilai`) VALUES
+(1, '12171353', 'MKK02', 'A'),
+(2, '12171353', 'MKK01', 'A'),
+(3, '12171353', 'MKU02', 'C'),
+(4, '12171353', 'MKU01', 'B');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -216,6 +252,12 @@ ALTER TABLE `tahun_akademik`
   ADD PRIMARY KEY (`id_thn_akad`);
 
 --
+-- Indexes for table `transkrip_nilai`
+--
+ALTER TABLE `transkrip_nilai`
+  ADD PRIMARY KEY (`id_transkrip`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -235,7 +277,7 @@ ALTER TABLE `jurusan`
 -- AUTO_INCREMENT for table `krs`
 --
 ALTER TABLE `krs`
-  MODIFY `id_krs` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_krs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `mahasiswa`
@@ -254,6 +296,12 @@ ALTER TABLE `prodi`
 --
 ALTER TABLE `tahun_akademik`
   MODIFY `id_thn_akad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `transkrip_nilai`
+--
+ALTER TABLE `transkrip_nilai`
+  MODIFY `id_transkrip` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user`
