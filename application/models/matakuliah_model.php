@@ -8,6 +8,7 @@ class Matakuliah_model extends CI_Model
 	
 	public function tampil_data($table)
 	{
+		$this->db->order_by('nama_prodi', 'ASC');
 		return $this->db->get($table);
 	}
 

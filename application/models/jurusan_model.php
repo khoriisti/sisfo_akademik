@@ -8,6 +8,7 @@ class Jurusan_model extends CI_Model
 	
 	public function tampil_data()
 	{
+		$this->db->order_by('nama_jurusan', 'ASC');
 		return $this->db->get('jurusan');
 	}
 
